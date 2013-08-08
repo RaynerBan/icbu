@@ -12,7 +12,9 @@ module.exports = function(app){
   		res.render('index', { 
   			title: 'ICBU Center',
   			name: 'blog' ,
-  			items: [1992, 'liaopr', 'express']
+  			items: [1992, 'liaopr', 'express'],
+  			user: req.session.user,
+			success: req.flash('success').toString()
   		});
 	});
 	app.get('/user/:username', function(req, res){
@@ -59,8 +61,11 @@ module.exports = function(app){
 					return res.redirect('/register');
 				}
 				req.session.user = newUser;
+				//为success赋值
 				req.flash('success', '注册成功');
 				res.redirect('/');
+
+
 			});
 		});
 		

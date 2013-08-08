@@ -1,5 +1,5 @@
 module.exports = {
 	cookieSecret: 'icbuBlogbyLiaopr',
-	db: 'test',
+	db: 'icbuV2',
 	host: 'localhost',
 };

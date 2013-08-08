@@ -3,6 +3,7 @@
  * Module dependencies.
  */
 
+
 var express = require('express')
   , routes = require('./routes')
   , http = require('http')
@@ -20,7 +21,6 @@ app.configure(function(){
       app.set('views', __dirname + '/views');
       app.set('view engine', 'ejs');
       //app.set('view options',{layout:true});
-      app.use(flash());
       app.use(express.favicon());
       app.use(express.logger('dev'));
       app.use(express.bodyParser());
@@ -33,6 +33,7 @@ app.configure(function(){
       		db: settings.db
       	})
       }));
+      app.use(flash());
       
       app.use(app.router);
       //app.use(express.router(routes));
