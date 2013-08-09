@@ -107,7 +107,7 @@ module.exports = function(app){
 			//if success
 			req.session.user = user;
 			req.flash('success','登录成功');
-			res.redirect('/');
+			res.redirect('/my');
 
 		});
 	});
@@ -159,9 +159,8 @@ module.exports = function(app){
 		}
 		next();
 	}
-
+	app.get('/my', checkLogin);
 	app.get('/my', function(req, res){
-	
   		Post.get(null, function(err, posts){
   			if(err){
   				posts = [];
