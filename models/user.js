@@ -46,7 +46,7 @@ MongoClient.connect("mongodb://localhost:27017/test", function(err, db) {
       });
     });
   });*/
-//////////////////////////////
+///////////////////////////
 
   //打开数据库
   mongodb.open(function(err, db){
